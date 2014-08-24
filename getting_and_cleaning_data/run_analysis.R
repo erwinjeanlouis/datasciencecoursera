@@ -8,6 +8,7 @@
 # Write the results to a file
 runProject <- function()
 {
+    require ( reshape )
     downloadAndUnzipProjectData()
     dataTable <-loadAndMergeTestAndTrainingData()
     filteredData <- filterColumns( dataTable)
@@ -106,14 +107,6 @@ readTrainingData <- function()
     completeTraining <- cbind(trainingLabelSubjectTable, completeTraining)
 
 }
-
-# Read factor table. Function not used
-#readFactorTable <- function(inputFile)
-#{
-#    columns <- c("index", "label")
-#    factorsDataTable <- read.table ( inputFile, col.names = columns )
-#     
-#}
 
 # readActivityLabelTable
 # Read the activity_labels.txt file
